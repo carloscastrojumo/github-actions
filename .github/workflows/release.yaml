@@ -17,7 +17,7 @@ jobs:
     - name: push
       uses: github-actions-x/commit@v2.7
       with:
-        github-token: ${{ secrets.JUMO_GITHUB_WRITER }}
+        github-token: ${{ secrets.TEST_GITHUB_ACTIONS }}
         push-branch: 'master'
         commit-message: 'Release patch'
         force-add: 'true'
