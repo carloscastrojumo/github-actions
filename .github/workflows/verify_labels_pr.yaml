@@ -1,0 +1,15 @@
+name: Verify Labels PR
+on:
+  pull_request:
+    branches:
+      - release
+
+jobs:
+  verifyLabels:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: jesusvasquez333/verify-pr-label-action@v1.3.1
+      with:
+        github-token: ${{ secrets.JUMO_GITHUB_WRITER }}
+        valid-labels: 'bug'
+
