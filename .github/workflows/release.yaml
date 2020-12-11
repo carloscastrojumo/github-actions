@@ -3,16 +3,18 @@ on:
   pull_request:
     branches:
       - release-*
-    types:
-      - "closed"
+        #    types:
+        #- "closed"
 
 jobs:
   patch:
-    if: contains(github.event.pull_request.labels.*.name, 'release') && contains(github.event.pull_request.labels.*.name, 'bug')
+    #if: contains(github.event.pull_request.labels.*.name, 'release') && contains(github.event.pull_request.labels.*.name, 'bug')
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run Makefile
+    - name: Install tools
+      run: make tools
+    - name: Release patch
       run: make bump-patch
     - name: push
       uses: github-actions-x/commit@v2.7
