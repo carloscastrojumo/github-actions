@@ -1,5 +1,4 @@
 VERSION := $(shell cat VERSION)
-export PATH := bin:$(PATH)
 
 tools:
 	@bash install_deps.sh
