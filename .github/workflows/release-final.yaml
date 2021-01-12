@@ -13,4 +13,4 @@ jobs:
         with:
           config-name: release-drafter-final.yml
         env:
-          GITHUB_TOKEN: ${{ secrets.JUMO_GITHUB_WRITER }}
+          GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_ACTIONS }}
