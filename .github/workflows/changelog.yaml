@@ -1,9 +1,11 @@
-name: 'Changelog'
+name: Changelog
+
 on:
   push:
     tags:
       - 'v*'
 
+jobs:
   release:
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
@@ -12,7 +14,7 @@ on:
         id: github_release
         uses: mikepenz/release-changelog-builder-action@main
         env:
-          GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_ACTIONS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release
         uses: actions/create-release@v1
@@ -21,4 +23,4 @@ on:
           release_name: ${{ github.ref }}
           body: ${{steps.github_release.outputs.changelog}}
         env:
-          GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_ACTIONS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
