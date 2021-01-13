@@ -1,2 +1,7 @@
 my dev branch
-test
+bla bla bla
+a bug
+another bug
+adads
+buuuuug
+asdasda
